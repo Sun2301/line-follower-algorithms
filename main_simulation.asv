@@ -11,7 +11,7 @@ fprintf('=== LINE FOLLOWER SIMULATION ===\n');
 robot = setup_robot();  % calls robot_model/setup_robot.m
 
 %% 2. SIMULATION PARAMETERS
-sim_time = 30;                          % 5 second test run
+sim_time = 5;                          % 5 second test run
 time_steps = round(sim_time / robot.dt);
 time_vector = 0:robot.dt:sim_time;
 

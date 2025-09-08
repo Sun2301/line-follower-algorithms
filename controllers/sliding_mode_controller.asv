@@ -10,13 +10,15 @@ function [left_speed, right_speed, controller_state]=sliding_mode_controller(err
     boundary_layer = 0.1;
     smc_output = max_control*sign(s)*abs(s)/(abs(s)+boundary_layer);
     
-     % Convert SMC output to differential wheel speeds
+     % Convert PID output to differential wheel speeds
     base_speed = 0.2;  % Forward speed (m/s)
-    speed_diff = smc_output * 0.01;  % Scale factor
+    speed_diff = pid_output * 0.01;  % Scale factor
 
     left_speed = base_speed - speed_diff;
     right_speed = base_speed + speed_diff;
     
     % Update state for next iteration
+    controller_state.integral = integral_sum;
     controller_state.last_error = error;
+    
 end

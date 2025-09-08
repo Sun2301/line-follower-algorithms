@@ -26,8 +26,8 @@ function error = calculate_error(sensor_readings)
         return;
     end
     
-    % Calculate weighted average of line position
-    % Use inverted sensor values so darker readings have more weight
+    % Weighted average of line position
+    % Inverted sensor values so darker readings have more weight
     line_strength = 1 - sensor_readings;  % Convert so 1=line, 0=background
     
     numerator = sum(weights .* active_sensors .* line_strength);
