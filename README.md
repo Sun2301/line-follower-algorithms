@@ -104,7 +104,7 @@ int right_motor = constrain(base_speed + pid_output, 0, 255);
 
 **Execution:**
 ```matlab
-git clone https://github.com/[username]/line-follower-algorithms
+git clone https://github.com/Sun2301/line-follower-algorithms
 cd line-follower-algorithms
 addpath('robot_model', 'controllers', 'utils');
 main_simulation;
