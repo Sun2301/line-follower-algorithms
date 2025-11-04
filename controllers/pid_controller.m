@@ -8,9 +8,9 @@ function [left_speed, right_speed, controller_state] = pid_controller(error, dt,
     derivative = (error - last_error) / dt;
     
     % PID parameters
-    Kp = 2.0;
-    Ki = 0.1;
-    Kd = 0.5;
+    Kp = 1.0;
+    Ki = 0.2;
+    Kd = 0.2;
     max_output = 50;
     
     %PID output calculation
